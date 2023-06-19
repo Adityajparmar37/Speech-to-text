@@ -17,8 +17,15 @@ body {
 }
 
 h1 {
-    color: #fff;
+
     font-size: 50px;
+    color: #ffffff;
+    background-image: -webkit-linear-gradient(315deg, #ffffff 43%, rgb(247, 241, 170) 53%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
 }
 
 #convert_text {
@@ -30,9 +37,7 @@ h1 {
     font-size: 20px;
     margin-bottom: 10px;
     border-style: none;
-}
 
-#convert_text:hover {
     box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55) inset;
     -webkit-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55) inset;
     -moz-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55) inset;

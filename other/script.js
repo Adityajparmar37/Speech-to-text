@@ -2,7 +2,11 @@ let form = document.querySelector("form");
 let sr = window.webkitSpeechRecognition || window.SpeechRecognitionAlternative;
 let speech = new sr();
 
-speech.lang="hi";
+const body = document.querySelector('body');
+
+// const synth = window.speechSynthesis;
+
+// speech.lang="hi";
 speech.continuous = true;
 speech.interimResults = true;
 
@@ -11,6 +15,11 @@ speech.interimResults = true;
 form.addEventListener("submit", e => {
     e.preventDefault();
     speech.start();
+
+    //wave effects
+    body.style.background = 'url(/speech-to-text/other/wave.gif)';
+    body.style.backgroundRepeat = 'repeat-x';
+    body.style.backgroundSize = '100% 100%'
 })
 
 speech.onresult = res => {
@@ -18,13 +27,40 @@ speech.onresult = res => {
         .map(r => r[0])
         .map(txt => txt.transcript)
         .join("");
-        form[0].value=text;
-    // console.log(text);
- }
+    form[0].value = text;
 
- form[2].addEventListener("click",()=>{
+
+
+
+
+    // if(text="I am Arpan"){
+    //     const speaktext = new SpeechSynthesisUtterance("get lost");
+    //     synth.speak(speaktext);
+    //     // speak.stop();
+    // }
+    console.log(text);
+}
+
+form[2].addEventListener("click", () => {
     speech.stop();
- })
+    body.style.background = 'linear-gradient(to right bottom, #d13cff, #031f6a)';
+})
+
+const copy_btn = document.getElementById("copy_id");
+
+form[3].addEventListener("click", () => {
+    let copy_txt = document.querySelector('.textarea');
+    copy_txt.select();
+    document.execCommand('copy');
+
+    copy_btn.style.background = '#a6a6a6';
+    copy_btn.style.boxShadow = '6px 6px 5px 0px rgba(0,0,0,0.75) inset';
+
+    setTimeout(() => {
+        copy_btn.style.background = '#0ea4da';
+        copy_btn.style.boxShadow = '0px 1px 2px 0px rgba(0, 255, 255, 0.7),1px 2px 4px 0px rgba(0, 255, 255, 0.7),2px 4px 8px 0px rgba(0, 255, 255, 0.7),2px 4px 16px 0px rgba(0, 255, 255, 0.7)';
+    }, 1000)
+})
 
 
 
