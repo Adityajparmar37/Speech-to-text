@@ -18,7 +18,7 @@ body {
 
 h1 {
 
-    font-size: 50px;
+    font-size: 55px;
     color: #ffffff;
     background-image: -webkit-linear-gradient(315deg, #ffffff 43%, rgb(247, 241, 170) 53%);
     background-clip: text;
@@ -29,8 +29,8 @@ h1 {
 }
 
 #convert_text {
-    width: 100%;
-    height: 200px;
+    width: 110%;
+    height: 250px;
     border-radius: 10px;
     resize: none;
     padding: 10px;
@@ -50,9 +50,13 @@ h1 {
     background: #0ea4da;
     border: 0;
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
+
+    box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
 }
 
 .button:hover {
@@ -70,9 +74,13 @@ h1 {
     background: #0ea4da;
     border: 0;
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
+
+    box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
+    -moz-box-shadow: 10px 8px 9px -5px rgba(0, 0, 0, 0.55);
 }
 
 .button2:hover {
@@ -82,4 +90,23 @@ h1 {
         2px 4px 8px 0px rgba(0, 255, 255, 0.7),
         2px 4px 16px 0px rgba(0, 255, 255, 0.7);
 
+}
+
+label {
+    font-size: 28px;
+    color: #ffff;
+    background-image: -webkit-linear-gradient(315deg, #ffffff 50%, rgb(247, 241, 170) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.name {
+    font-size: 20px;
+    color: rgba(107, 105, 105, 0.895);
+}
+
+.DropDown{
+    margin-bottom: 20px;
 }

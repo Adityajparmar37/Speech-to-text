@@ -4,9 +4,19 @@ let speech = new sr();
 
 const body = document.querySelector('body');
 
-// const synth = window.speechSynthesis;
+form[0].addEventListener("click", () => {
 
-// speech.lang="hi";
+    var dropdown = document.getElementById("selects");
+    var language = dropdown.options[dropdown.selectedIndex].value;
+
+    // console.log(language);
+
+
+
+    // const synth = window.speechSynthesis;
+
+    speech.lang = language;
+})
 speech.continuous = true;
 speech.interimResults = true;
 
@@ -17,7 +27,7 @@ form.addEventListener("submit", e => {
     speech.start();
 
     //wave effects
-    body.style.background = 'url(/speech-to-text/other/wave.gif)';
+    body.style.background = 'url(./other/wave.gif)';
     body.style.backgroundRepeat = 'repeat-x';
     body.style.backgroundSize = '100% 100%'
 })
@@ -27,10 +37,7 @@ speech.onresult = res => {
         .map(r => r[0])
         .map(txt => txt.transcript)
         .join("");
-    form[0].value = text;
-
-
-
+    form[1].value = text;
 
 
     // if(text="I am Arpan"){
@@ -41,14 +48,14 @@ speech.onresult = res => {
     console.log(text);
 }
 
-form[2].addEventListener("click", () => {
+form[3].addEventListener("click", () => {
     speech.stop();
     body.style.background = 'linear-gradient(to right bottom, #d13cff, #031f6a)';
 })
 
 const copy_btn = document.getElementById("copy_id");
 
-form[3].addEventListener("click", () => {
+form[4].addEventListener("click", () => {
     let copy_txt = document.querySelector('.textarea');
     copy_txt.select();
     document.execCommand('copy');
