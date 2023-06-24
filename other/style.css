@@ -4,16 +4,126 @@ body {
     margin: 0;
     background: linear-gradient(to right bottom, #d13cff, #031f6a);
     color: #000;
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+}
 
+
+/* back arrow */
+
+a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+.arrow {
+    /* cursor: pointer; */
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.1s;
+    width: 30px;
+    margin-top: 50px;
+    margin-left: 50px;
+    z-index: 1;
+}
+
+.arrow-top,
+.arrow-bottom {
+    background-color: #666;
+    height: 4px;
+    left: -5px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.arrow-bottom:after {
+    background-color: #fff;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.1s;
+}
+
+.arrow-top:after {
+    background-color: yellow;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.1s;
+}
+
+.arrow-top {
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
+.arrow-top:after {
+    right: 100%;
+    left: 0;
+    transition-delay: 0s;
+}
+
+.arrow-bottom {
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+.arrow-bottom:after {
+    right: 0;
+    left: 100%;
+    transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-top:after {
+    right: 0;
+    transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-bottom:after {
+    left: 0;
+    transition-delay: 0s;
+}
+
+.arrow:active {
+    transform: translateX(50%) translateY(-50%) scale(0.9);
+}
+
+.arrow span {
+    display: block;
+    width: 3em;
+    opacity: 0;
+    transition: opacity 0.3s 0s;
+    padding: 0 0.5em;
+}
+
+.arrow:hover span {
+    opacity: 1;
+    transition: opacity 0.3s 0.1s;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(-40%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+
+.form {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-}
-
-.voice_to_text {
-    width: 600px;
-    text-align: center;
 }
 
 h1 {
@@ -107,6 +217,6 @@ label {
     color: rgba(107, 105, 105, 0.895);
 }
 
-.DropDown{
+.DropDown {
     margin-bottom: 20px;
 }
